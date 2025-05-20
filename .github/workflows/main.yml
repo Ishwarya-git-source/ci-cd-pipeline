@@ -8,7 +8,10 @@ on:
 
 jobs:
   build:
-    runs-on: windows
+    runs-on: ${{matrix.os}}
+    strategy:
+       matrix:
+         os: windows-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
